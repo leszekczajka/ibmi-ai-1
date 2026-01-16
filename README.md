@@ -15,7 +15,7 @@ The financial instruments dictionary is stored in a database.
 
 ## Program
 
-A program running in the 5250 terminal is available for browsing. It presents the list of instruments in a subfile format. The list is sorted by ISIN code. The following columns are displayed in the list:
+A program running in the 5250 terminal is available for browsing the data; it presents the list of instruments in subfile. The list is sorted by ISIN code. The following columns are displayed in the list:
 * ISIN code
 * instrument short name
 * issuer name

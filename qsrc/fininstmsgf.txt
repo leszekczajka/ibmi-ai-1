@@ -1,0 +1,13 @@
+Message File: FININSTMSGF
+Library: QGPL
+
+Messages:
+
+INF0001 - Instrument added successfully.
+INF0002 - Instrument updated successfully.
+INF0003 - Instrument deleted successfully.
+
+ERR0001 - Instrument not found.
+ERR0002 - Error adding instrument. Duplicate ISIN or database error.
+ERR0003 - Error updating instrument.
+ERR0004 - Error deleting instrument.

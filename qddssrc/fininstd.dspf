@@ -1,0 +1,169 @@
+     A*================================================================
+     A* Display File: FININSTD
+     A* Description:  Financial Instruments Dictionary Maintenance
+     A*================================================================
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA06(06 'Add')
+     A                                      CA12(12 'Cancel')
+     A                                      PAGEUP(25)
+     A                                      PAGEDOWN(26)
+     A*----------------------------------------------------------------
+     A* Subfile Record Format
+     A*----------------------------------------------------------------
+     A          R LISTSFL                   SFL
+     A            SFOPT          1A  B  8  2VALUES(' ' '2' '4' '5')
+     A            SFISIN        12A  O  8  5
+     A            SFSHRTNAM     20A  O  8 19
+     A            SFISSUER      20A  O  8 41
+     A            SFISSUEDT      10A  O  8 63
+     A            SFCOUNTRY      2A  O  8 75
+     A            SFCURRCY       3A  O  8 78
+     A*----------------------------------------------------------------
+     A* Subfile Control Record Format
+     A*----------------------------------------------------------------
+     A          R LISTCTL                   SFLCTL(LISTSFL)
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0012)
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                      RTNCSRLOC(&CSESSION &CSESSION)
+     A            CSESSION      10A  H
+     A            SESSION       10A  H
+     A            SFLRRN         4S 0H
+     A                                  1  2'FININSTD'
+     A                                  1 24'Financial Instruments Dictionary'
+     A                                      DSPATR(HI)
+     A                                  1 70DATE
+     A                                      EDTCDE(Y)
+     A                                  2 70TIME
+     A                                  3  2'Options: 2=Edit  4=Delete  5=Detail-
+     A                                      s'
+     A                                      COLOR(BLU)
+     A                                  5  2'Opt'
+     A                                      DSPATR(HI)
+     A                                  5  5'ISIN'
+     A                                      DSPATR(HI)
+     A                                  5 19'Short Name'
+     A                                      DSPATR(HI)
+     A                                  5 41'Issuer'
+     A                                      DSPATR(HI)
+     A                                  5 63'Issue Date'
+     A                                      DSPATR(HI)
+     A                                  5 75'Cy'
+     A                                      DSPATR(HI)
+     A                                  5 78'Cur'
+     A                                      DSPATR(HI)
+     A                                  6  2'---'
+     A                                  6  5'------------'
+     A                                  6 19'--------------------'
+     A                                  6 41'--------------------'
+     A                                  6 63'----------'
+     A                                  6 75'--'
+     A                                  6 78'---'
+     A*----------------------------------------------------------------
+     A* Footer Record Format
+     A*----------------------------------------------------------------
+     A          R LISTFTR
+     A                                 23  2'F3=Exit  F6=Add'
+     A                                      COLOR(BLU)
+     A*----------------------------------------------------------------
+     A* Message Subfile
+     A*----------------------------------------------------------------
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(24)
+     A            MSGKEY                    SFLMSGKEY
+     A            PGMQ                      SFLPGMQ(10)
+     A          R MSGCTL                    SFLCTL(MSGSFL)
+     A                                      SFLSIZ(0002)
+     A                                      SFLPAG(0001)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A  35                                  SFLCLR
+     A                                      OVERLAY
+     A            MSGPGMQ       10A  H
+     A*----------------------------------------------------------------
+     A* Add/Edit Window Record Format
+     A*----------------------------------------------------------------
+     A          R DETAILW                   WINDOW(5 10 16 60)
+     A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+     A            DESSION       10A  H
+     A            DMODE          1A  H
+     A                                  1  2'Instrument Details'
+     A                                      DSPATR(HI)
+     A                                  3  2'ISIN Code . . . :'
+     A            DFISIN        12A  B  3 21
+     A N41                                  DSPATR(UL)
+     A  41                                  DSPATR(PR)
+     A  51                                  DSPATR(RI)
+     A                                  5  2'Short Name  . . :'
+     A            DFSHRTNAM     35A  B  5 21
+     A                                      DSPATR(UL)
+     A  52                                  DSPATR(RI)
+     A                                  7  2'Issuer Name . . :'
+     A            DFISSUER      50A  B  7 21
+     A                                      DSPATR(UL)
+     A  53                                  DSPATR(RI)
+     A                                  9  2'Issue Date  . . :'
+     A            DFISSUEDT     10A  B  9 21
+     A                                      DSPATR(UL)
+     A  54                                  DSPATR(RI)
+     A                                  9 33'(YYYY-MM-DD)'
+     A                                 11  2'Country . . . . :'
+     A            DFCOUNTRY      2A  B 11 21
+     A                                      DSPATR(UL)
+     A  55                                  DSPATR(RI)
+     A                                 11 25'(2-letter ISO code)'
+     A                                 13  2'Currency  . . . :'
+     A            DFCURRCY       3A  B 13 21
+     A                                      DSPATR(UL)
+     A  56                                  DSPATR(RI)
+     A                                 13 26'(3-letter ISO code)'
+     A                                 15  2'Issue Size  . . :'
+     A            DFISSUESZ     17Y 2B 15 21
+     A                                      DSPATR(UL)
+     A                                      EDTCDE(1)
+     A  57                                  DSPATR(RI)
+     A*----------------------------------------------------------------
+     A* Confirm Delete Window
+     A*----------------------------------------------------------------
+     A          R CONFIRMW                  WINDOW(8 15 7 50)
+     A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+     A            CESSION       10A  H
+     A                                  1  2'Confirm Delete'
+     A                                      DSPATR(HI)
+     A                                  3  2'Delete instrument with ISIN:'
+     A            CFISIN        12A  O  3 32
+     A                                  5  2'Press Enter to confirm, F12 to canc-
+     A                                      el'
+     A                                      COLOR(BLU)
+     A*----------------------------------------------------------------
+     A* Detail View Window
+     A*----------------------------------------------------------------
+     A          R VIEWW                     WINDOW(4 8 18 64)
+     A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+     A            VESSION       10A  H
+     A                                  1  2'Instrument Details (View Only)'
+     A                                      DSPATR(HI)
+     A                                  3  2'ISIN Code . . . :'
+     A            VFISIN        12A  O  3 21
+     A                                  5  2'Short Name  . . :'
+     A            VFSHRTNAM     35A  O  5 21
+     A                                  7  2'Issuer Name . . :'
+     A            VFISSUER      50A  O  7 21
+     A                                  9  2'Issue Date  . . :'
+     A            VFISSUEDT     10A  O  9 21
+     A                                 11  2'Country . . . . :'
+     A            VFCOUNTRY      2A  O 11 21
+     A                                 13  2'Currency  . . . :'
+     A            VFCURRCY       3A  O 13 21
+     A                                 15  2'Issue Size  . . :'
+     A            VFISSUESZ     17Y 2O 15 21
+     A                                      EDTCDE(1)
+     A                                 17  2'Press Enter or F12 to return'
+     A                                      COLOR(BLU)
