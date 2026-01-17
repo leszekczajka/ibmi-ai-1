@@ -42,11 +42,11 @@
      A                                  1 70DATE
      A                                      EDTCDE(Y)
      A                                  2 70TIME
-     A                                  3  2'Options: 2=Edit  4=Delete  5=Details'
+     A                                  3  2'Opts: 2=Edit  4=Delete  5=Details'
      A                                      COLOR(BLU)
      A                                  5  2'Opt'
      A                                      DSPATR(HI)
-     A                                  5  6'ISIN'
+     A                                  5  5'ISIN'
      A                                      DSPATR(HI)
      A                                  5 19'Short Name'
      A                                      DSPATR(HI)
@@ -59,7 +59,7 @@
      A                                  5 78'Cur'
      A                                      DSPATR(HI)
      A                                  6  2'---'
-     A                                  6  6'------------'
+     A                                  6  5'------------'
      A                                  6 19'--------------------'
      A                                  6 41'--------------------'
      A                                  6 63'----------'
