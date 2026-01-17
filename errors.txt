@@ -1,5 +1,285 @@
 Compiling display file FININSTD...
 CPC2196: Library IBMIAI1 added to library list.
-CPD0043: Keyword SRCSTMF not valid for this command.
-CPF0006: Errors occurred in command.
+CPC7301: File QDDSSRC created in library IBMIAI1.
+CPCA081: Stream file copied to object.
+CPC3201: Member FININSTD file QDDSSRC in IBMIAI1 changed.
+CPF7311: Errors in DDS not allowed with specified GENLVL.
+CPF7302: File FININSTD not created in library IBMIAI1.
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    1
+ File name . . . . . . . . . . . . . . . . . . . . . :   FININSTD
+   Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI1
+ File attribute  . . . . . . . . . . . . . . . . . . :   Display
+ Source file containing DDS  . . . . . . . . . . . . :   QDDSSRC
+   Library name  . . . . . . . . . . . . . . . . . . :   IBMIAI1
+ Source member containing DDS  . . . . . . . . . . . :   FININSTD
+ Source member last changed  . . . . . . . . . . . . :   17/01/26  12:08:06
+ Source listing options  . . . . . . . . . . . . . . :   *SOURCE    *LIST      *NOSECLVL  *EVENTF
+ DDS generation severity level . . . . . . . . . . . :   20
+ DDS flagging severity level . . . . . . . . . . . . :   00
+ Authority . . . . . . . . . . . . . . . . . . . . . :   *LIBCRTAUT
+ Replace file  . . . . . . . . . . . . . . . . . . . :   *YES
+ Text  . . . . . . . . . . . . . . . . . . . . . . . :
+ Compiler  . . . . . . . . . . . . . . . . . . . . . :   IBM System i5 Data Description Processor
+                                      Data Description Source
+ SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
+    100       A*================================================================
+    200       A* Display File: FININSTD
+    300       A* Description:  Financial Instruments Dictionary Maintenance
+    400       A*================================================================
+    500       A                                      DSPSIZ(24 80 *DS3)
+    600       A                                      PRINT
+    700       A                                      INDARA
+    800       A                                      CA03(03 'Exit')
+    900       A                                      CA06(06 'Add')
+   1000       A                                      CA12(12 'Cancel')
+   1100       A                                      PAGEUP(25)
+   1200       A                                      PAGEDOWN(26)
+   1300       A*----------------------------------------------------------------
+   1400       A* Subfile Record Format
+   1500       A*----------------------------------------------------------------
+   1600       A          R LISTSFL                   SFL
+   1700       A            SFOPT          1A  B  8  2VALUES(' ' '2' '4' '5')
+   1800       A            SFISIN        12A  O  8  5
+   1900       A            SFSHRTNAM     20A  O  8 19
+   2000       A            SFISSUER      20A  O  8 41
+   2100       A            SFISSUEDT      10A  O  8 63
+*                                  CPD7419-*.  .  .  .
+*                                   CPD7410-** .  .  .
+*                                      CPD7410-***.  .
+*                                         CPD7422-***.
+*                                            CPD7484-*
+   2200       A            SFCOUNTRY      2A  O  8 75
+   2300       A            SFCURRCY       3A  O  8 78
+   2400       A*----------------------------------------------------------------
+   2500       A* Subfile Control Record Format
+   2600       A*----------------------------------------------------------------
+   2700       A          R LISTCTL                   SFLCTL(LISTSFL)
+   2800       A                                      SFLSIZ(9999)
+   2900       A                                      SFLPAG(0012)
+   3000       A  31                                  SFLDSP
+   3100       A  32                                  SFLDSPCTL
+   3200       A  33                                  SFLCLR
+   3300       A  34                                  SFLEND(*MORE)
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    2
+                                      Data Description Source
+ SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
+   3400       A                                      OVERLAY
+   3500       A                                      RTNCSRLOC(&CSESSION &CSESSION)
+   3600       A            CSESSION      10A  H
+   3700       A            SESSION       10A  H
+   3800       A            SFLRRN         4S 0H
+   3900       A                                  1  2'FININSTD'
+   4000       A                                  1 24'Financial Instruments Dictionary'
+   4100       A                                      DSPATR(HI)
+   4200       A                                  1 70DATE
+   4300       A                                      EDTCDE(Y)
+   4400       A                                  2 70TIME
+   4500       A                                  3  2'Options: 2=Edit  4=Delete  5=Detail          -
+   4600       A                                      s'
+   4700       A                                      COLOR(BLU)
+   4800       A                                  5  2'Opt'
+   4900       A                                      DSPATR(HI)
+   5000       A                                  5  5'ISIN'
+*                                      CPD7866-******
+   5100       A                                      DSPATR(HI)
+   5200       A                                  5 19'Short Name'
+   5300       A                                      DSPATR(HI)
+   5400       A                                  5 41'Issuer'
+   5500       A                                      DSPATR(HI)
+   5600       A                                  5 63'Issue Date'
+   5700       A                                      DSPATR(HI)
+   5800       A                                  5 75'Cy'
+   5900       A                                      DSPATR(HI)
+   6000       A                                  5 78'Cur'
+   6100       A                                      DSPATR(HI)
+   6200       A                                  6  2'---'
+   6300       A                                  6  5'------------'
+*                                      CPD7866-******
+   6400       A                                  6 19'--------------------'
+   6500       A                                  6 41'--------------------'
+   6600       A                                  6 63'----------'
+   6700       A                                  6 75'--'
+   6800       A                                  6 78'---'
+   6900       A*----------------------------------------------------------------
+   7000       A* Footer Record Format
+   7100       A*----------------------------------------------------------------
+   7200       A          R LISTFTR
+   7300       A                                 23  2'F3=Exit  F6=Add'
+   7400       A                                      COLOR(BLU)
+   7500       A*----------------------------------------------------------------
+   7600       A* Message Subfile
+   7700       A*----------------------------------------------------------------
+   7800       A          R MSGSFL                    SFL
+   7900       A                                      SFLMSGRCD(24)
+   8000       A            MSGKEY                    SFLMSGKEY
+   8100       A            PGMQ                      SFLPGMQ(10)
+   8200       A          R MSGCTL                    SFLCTL(MSGSFL)
+   8300       A                                      SFLSIZ(0002)
+   8400       A                                      SFLPAG(0001)
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    3
+                                      Data Description Source
+ SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
+   8500       A                                      SFLDSP
+   8600       A                                      SFLDSPCTL
+   8700       A  35                                  SFLCLR
+   8800       A                                      OVERLAY
+   8900       A            MSGPGMQ       10A  H
+   9000       A*----------------------------------------------------------------
+   9100       A* Add/Edit Window Record Format
+   9200       A*----------------------------------------------------------------
+   9300       A          R DETAILW                   WINDOW(5 10 16 60)
+   9400       A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+*                                            CPD7520-*                             .
+*                                                                          CPD8178-*
+   9500       A            DESSION       10A  H
+   9600       A            DMODE          1A  H
+   9700       A                                  1  2'Instrument Details'
+   9800       A                                      DSPATR(HI)
+   9900       A                                  3  2'ISIN Code . . . :'
+  10000       A            DFISIN        12A  B  3 21
+  10100       A N41                                  DSPATR(UL)
+  10200       A  41                                  DSPATR(PR)
+  10300       A  51                                  DSPATR(RI)
+  10400       A                                  5  2'Short Name  . . :'
+  10500       A            DFSHRTNAM     35A  B  5 21
+  10600       A                                      DSPATR(UL)
+  10700       A  52                                  DSPATR(RI)
+  10800       A                                  7  2'Issuer Name . . :'
+  10900       A            DFISSUER      50A  B  7 21
+*                                      CPD8186-******
+  11000       A                                      DSPATR(UL)
+  11100       A  53                                  DSPATR(RI)
+  11200       A                                  9  2'Issue Date  . . :'
+  11300       A            DFISSUEDT     10A  B  9 21
+  11400       A                                      DSPATR(UL)
+  11500       A  54                                  DSPATR(RI)
+  11600       A                                  9 33'(YYYY-MM-DD)'
+  11700       A                                 11  2'Country . . . . :'
+  11800       A            DFCOUNTRY      2A  B 11 21
+  11900       A                                      DSPATR(UL)
+  12000       A  55                                  DSPATR(RI)
+  12100       A                                 11 25'(2-letter ISO code)'
+  12200       A                                 13  2'Currency  . . . :'
+  12300       A            DFCURRCY       3A  B 13 21
+  12400       A                                      DSPATR(UL)
+  12500       A  56                                  DSPATR(RI)
+  12600       A                                 13 26'(3-letter ISO code)'
+  12700       A                                 15  2'Issue Size  . . :'
+  12800       A            DFISSUESZ     17Y 2B 15 21
+  12900       A                                      DSPATR(UL)
+  13000       A                                      EDTCDE(1)
+  13100       A  57                                  DSPATR(RI)
+  13200       A*----------------------------------------------------------------
+  13300       A* Confirm Delete Window
+  13400       A*----------------------------------------------------------------
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    4
+                                      Data Description Source
+ SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8  Date
+  13500       A          R CONFIRMW                  WINDOW(8 15 7 50)
+  13600       A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+*                                            CPD7520-*                             .
+*                                                                          CPD8178-*
+  13700       A            CESSION       10A  H
+  13800       A                                  1  2'Confirm Delete'
+  13900       A                                      DSPATR(HI)
+  14000       A                                  3  2'Delete instrument with ISIN:'
+  14100       A            CFISIN        12A  O  3 32
+  14200       A                                  5  2'Press Enter to confirm, F12 to canc          -
+  14300       A                                      el'
+  14400       A                                      COLOR(BLU)
+  14500       A*----------------------------------------------------------------
+  14600       A* Detail View Window
+  14700       A*----------------------------------------------------------------
+  14800       A          R VIEWW                     WINDOW(4 8 18 64)
+  14900       A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+*                                            CPD7520-*                             .
+*                                                                          CPD8178-*
+  15000       A            VESSION       10A  H
+  15100       A                                  1  2'Instrument Details (View Only)'
+  15200       A                                      DSPATR(HI)
+  15300       A                                  3  2'ISIN Code . . . :'
+  15400       A            VFISIN        12A  O  3 21
+  15500       A                                  5  2'Short Name  . . :'
+  15600       A            VFSHRTNAM     35A  O  5 21
+  15700       A                                  7  2'Issuer Name . . :'
+  15800       A            VFISSUER      50A  O  7 21
+*                                      CPD8186-******
+  15900       A                                  9  2'Issue Date  . . :'
+  16000       A            VFISSUEDT     10A  O  9 21
+  16100       A                                 11  2'Country . . . . :'
+  16200       A            VFCOUNTRY      2A  O 11 21
+  16300       A                                 13  2'Currency  . . . :'
+  16400       A            VFCURRCY       3A  O 13 21
+  16500       A                                 15  2'Issue Size  . . :'
+  16600       A            VFISSUESZ     17Y 2O 15 21
+  16700       A                                      EDTCDE(1)
+  16800       A                                 17  2'Press Enter or F12 to return'
+  16900       A                                      COLOR(BLU)
+                         * * * * *   E N D   O F   S O U R C E   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    5
+                                          Expanded Source
+                                                                                          Field       Buffer position
+ SEQNBR  *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8 length        Out     In
+    500                                              DSPSIZ(24 80 *DS3) PRINT INDARA +
+    800                                              CA03(03 'Exit') CA06(06 'Add') +
+   1000                                              CA12(12 'Cancel') PAGEUP(25) +
+   1200                                              PAGEDOWN(26)
+               * Indicator Area:
+               *  *IN03        *IN06        *IN12        *IN25        *IN26
+   7200                  R LISTFTR
+   7300                                         23  2'F3=Exit  F6=Add' COLOR(BLU)            15
+               * Indicator Area:
+               *  *IN03        *IN06        *IN12        *IN25        *IN26
+   7800                  R MSGSFL
+                 *DS3                                SFLMSGRCD(24)
+   7800                                              SFL
+   8000                    MSGKEY                    SFLMSGKEY                                4            1       1
+   8100                    PGMQ                      SFLPGMQ(10)                             10            5       5
+               * Indicator Area:
+               *  *IN35
+               * Indicator Area:
+               *  *IN03        *IN06        *IN12        *IN25        *IN26
+   8200                  R MSGCTL
+                 *DS3                                SFLSIZ(0002) SFLPAG(001)
+   8200                                              SFLCTL(MSGSFL) SFLDSP SFLDSPCTL
+   8700          35                                  SFLCLR
+   8800                                              OVERLAY
+   8900                    MSGPGMQ       10A  H                                              10            1       1
+               * Indicator Area:
+               *  *IN03        *IN06        *IN12        *IN25        *IN26
+  13500                  R CONFIRMW
+                 *DS3                                WINDOW(8 15 7 50)
+  13700                    CESSION       10A  H                                              10            1       1
+  13800                                          1  2'Confirm Delete' DSPATR(HI)             14
+  14000                                          3  2'Delete instrument with ISIN:'          28
+  14100                    CFISIN        12A  O  3 32                                        12           11
+  14200                                          5  2'Press Enter to confirm, F12 to can-    38
+  14200                                              c el' COLOR(BLU)
+                 * * * * *   E N D   O F   E X P A N D E D   S O U R C E   * * * * *
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    6
+                                             Messages
+    ID      Severity  Number
+* CPD7410      30        2      Message . . . . :   Characters in indicated field not allowed.
+* CPD7419      30        1      Message . . . . :   Data type not valid.
+* CPD7422      30        1      Message . . . . :   Value in indicated numeric field not allowed.
+* CPD7484      20        1      Message . . . . :   Keyword not valid for this file type.
+* CPD7520      20        3      Message . . . . :   Keyword ignored because of error in list of values.
+* CPD7866      10        2      Message . . . . :   Field overlaps another field with no conditions specified.
+* CPD8178      20        3      Message . . . . :   String length not valid.
+* CPD8186      20        2      Message . . . . :   Field extends outside window/pull down or into columns reserved for scroll
+                                                    bar or selection list.
+                                                   ***       KDPW S.A.       ***
+ 5770SS1 V7R5M0  220415                  Data Description               IBMIAI1/FININSTD         2/01/26 12:08:06        Page    7
+                                          Message Summary
+    Total          Informational          Warning        Error       Severe
+                       (0-9)              (10-19)       (20-29)      (30-99)
+       15                 0                    2             9            4
+* CPF7302      40               Message . . . . :   File FININSTD not created in library IBMIAI1.
+                         * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *
+                                                   ***       KDPW S.A.       ***
 make: *** [Makefile:67: dspf] Error 255
