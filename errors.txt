@@ -1,0 +1,89 @@
+-bash-5.2$ make all
+Creating library IBMIAI1...
+CPC2102: Library IBMIAI1 created.
+Creating table FININST...
+CPC2196: Library IBMIAI1 added to library list.
+QSYSPRT   *LIBL
+5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:05:13   PAGE   1
+Source stream file......../home/PG_LESZEK/ai-test/ibmi-ai-1/qddssrc/fininst.sql
+Target release............V7R5M0
+Commit....................*NONE
+Naming....................*SQL
+Generation level..........10
+Date format...............*JOB
+Date separator............*JOB
+Time format...............*HMS
+Time separator ...........*JOB
+Right margin..............80
+Default collection........IBMIAI1
+IBM SQL flagging..........*NOFLAG
+ANS flagging..............*NONE
+Decimal point.............*JOB
+Sort sequence.............*JOB
+Language ID...............*JOB
+Printer file..............*LIBL/QSYSPRT
+Source file CCSID.........1208
+Job CCSID.................870
+Statement processing......*RUN
+Allow copy of data........*OPTIMIZE
+Allow blocking............*ALLREAD
+SQL rules.................*DB2
+Decimal result options:
+  Maximum precision.......31
+  Maximum scale...........31
+  Minimum divide scale....0
+Concurrent access
+  resolution..............*DFT
+System time sensitive.....*YES
+Source member changed on 17/01/26  10:04:59
+                                                   ***       KDPW S.A.       ***
+5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:05:13   PAGE     2
+Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change
+      1 -- Financial Instruments Dictionary Table
+      2 -- Table: FININST
+      3
+      4 CREATE OR REPLACE TABLE FININST (
+      5     FIISIN       CHAR(12)      NOT NULL WITH DEFAULT '',
+      6     FISHRTNAM    CHAR(35)      NOT NULL WITH DEFAULT '',
+      7     FIISSUER     CHAR(50)      NOT NULL WITH DEFAULT '',
+      8     FIISSUEDT    DATE          NOT NULL WITH DEFAULT CURRENT_DATE,
+      9     FICOUNTRY    CHAR(2)       NOT NULL WITH DEFAULT '',
+     10     FICURRENCY   CHAR(3)       NOT NULL WITH DEFAULT '',
+     11     FIISSUESZ    DECIMAL(15,2) NOT NULL WITH DEFAULT 0,
+     12     PRIMARY KEY (FIISIN)
+     13 );
+     14
+     15 LABEL ON TABLE FININST IS 'Financial Instruments Dictionary';
+     16
+     17 LABEL ON COLUMN FININST (
+     18     FIISIN     IS 'ISIN Code',
+     19     FISHRTNAM  IS 'Short Name',
+     20     FIISSUER   IS 'Issuer Name',
+     21     FIISSUEDT  IS 'Issue Date',
+     22     FICOUNTRY  IS 'Country',
+     23     FICURRENCY IS 'Currency',
+     24     FIISSUESZ  IS 'Issue Size'
+     25 );
+     26
+     27 LABEL ON COLUMN FININST (
+     28     FIISIN     TEXT IS 'ISIN Code - Unique Identifier',
+     29     FISHRTNAM  TEXT IS 'Instrument Short Name',
+     30     FIISSUER   TEXT IS 'Issuer Name',
+     31     FIISSUEDT  TEXT IS 'Issue Date',
+     32     FICOUNTRY  TEXT IS 'Country of Issue (ISO 2-letter)',
+     33     FICURRENCY TEXT IS 'Issue Currency (ISO 3-letter)',
+     34     FIISSUESZ  TEXT IS 'Issue Size in Currency'
+     35 );
+                                 * * * * *  E N D  O F  S O U R C E  * * * * *
+                                                   ***       KDPW S.A.       ***
+5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:05:13   PAGE     3
+Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change
+MSG ID  SEV  RECORD  TEXT
+SQL0104  30      11  Position 25 Token ( was not valid. Valid tokens: ) ,.
+                    Message Summary
+  Total     Info   Warning      Error   Severe  Terminal
+      1        0         0          0        1         0
+30 level severity errors found in source
+                                * * * * *  E N D  O F  L I S T I N G  * * * * *
+                                                   ***       KDPW S.A.       ***
+make: *** [Makefile:41: table] Error 255
