@@ -96,7 +96,6 @@ dcl-pr ClearMsg end-pr;
 dcl-proc Main;
 
   open FININSTD;
-  MSGPGMQ = '*';
   gTopIsin = *blanks;
 
   LoadSubfile();
@@ -107,6 +106,7 @@ dcl-proc Main;
 
     write LISTFTR;
     if indicators.msgDsp;
+      MSGPGMQ = '*';
       write MSGCTL;
     endif;
     exfmt LISTCTL;
@@ -586,6 +586,7 @@ dcl-proc ClearMsg;
   QMHRMVPM('*':0:'    ':'*ALL':errorCode);
 
   if indicators.msgDsp;
+    MSGPGMQ = '*';
     indicators.msgClr = *on;
     write MSGCTL;
     indicators.msgClr = *off;
