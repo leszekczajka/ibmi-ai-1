@@ -1,10 +1,9 @@
 -bash-5.2$ make all
 Creating library IBMIAI1...
-CPC2102: Library IBMIAI1 created.
 Creating table FININST...
 CPC2196: Library IBMIAI1 added to library list.
 QSYSPRT   *LIBL
-5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:05:13   PAGE   1
+5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:35:01   PAGE   1
 Source stream file......../home/PG_LESZEK/ai-test/ibmi-ai-1/qddssrc/fininst.sql
 Target release............V7R5M0
 Commit....................*NONE
@@ -35,9 +34,9 @@ Decimal result options:
 Concurrent access
   resolution..............*DFT
 System time sensitive.....*YES
-Source member changed on 17/01/26  10:04:59
+Source member changed on 17/01/26  10:34:56
                                                    ***       KDPW S.A.       ***
-5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:05:13   PAGE     2
+5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:35:01   PAGE     2
 Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change
       1 -- Financial Instruments Dictionary Table
       2 -- Table: FININST
@@ -49,7 +48,7 @@ Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 .
       8     FIISSUEDT    DATE          NOT NULL WITH DEFAULT CURRENT_DATE,
       9     FICOUNTRY    CHAR(2)       NOT NULL WITH DEFAULT '',
      10     FICURRENCY   CHAR(3)       NOT NULL WITH DEFAULT '',
-     11     FIISSUESZ    DECIMAL(15,2) NOT NULL WITH DEFAULT 0,
+     11     FIISSUESZ    DECIMAL(15,2) NOT NULL DEFAULT 0,
      12     PRIMARY KEY (FIISIN)
      13 );
      14
@@ -76,7 +75,7 @@ Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 .
      35 );
                                  * * * * *  E N D  O F  S O U R C E  * * * * *
                                                    ***       KDPW S.A.       ***
-5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:05:13   PAGE     3
+5770SS1 V7R5M0 220415               Run SQL Statements             FININST                            17/01/26 10:35:01   PAGE     3
 Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change
 MSG ID  SEV  RECORD  TEXT
 SQL0104  30      11  Position 25 Token ( was not valid. Valid tokens: ) ,.
