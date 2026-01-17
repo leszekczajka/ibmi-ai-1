@@ -84,7 +84,9 @@ dcl-pr DeleteRecord ind end-pr;
 dcl-pr ReadRecord ind end-pr;
 dcl-pr FormatDate char(10) end-pr;
 dcl-pr ParseDate date end-pr;
-dcl-pr SendMsg end-pr;
+dcl-pr SendMsg;
+  msgId char(7) const;
+end-pr;
 dcl-pr ClearMsg end-pr;
 
 //==================================================================
