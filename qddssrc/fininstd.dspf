@@ -18,7 +18,7 @@
      A            SFISIN        12A  O  8  5
      A            SFSHRTNAM     20A  O  8 19
      A            SFISSUER      20A  O  8 41
-     A            SFISSUEDT      10A  O  8 63
+     A            SFISSUEDT     10A  O  8 63
      A            SFCOUNTRY      2A  O  8 75
      A            SFCURRCY       3A  O  8 78
      A*----------------------------------------------------------------
@@ -91,7 +91,7 @@
      A* Add/Edit Window Record Format
      A*----------------------------------------------------------------
      A          R DETAILW                   WINDOW(5 10 16 60)
-     A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+     A                                      WDWBORDER((*DSPATR RI) (*COLOR BLU))
      A            DESSION       10A  H
      A            DMODE          1A  H
      A                                  1  2'Instrument Details'
@@ -106,7 +106,7 @@
      A                                      DSPATR(UL)
      A  52                                  DSPATR(RI)
      A                                  7  2'Issuer Name . . :'
-     A            DFISSUER      50A  B  7 21
+     A            DFISSUER      38A  B  7 21
      A                                      DSPATR(UL)
      A  53                                  DSPATR(RI)
      A                                  9  2'Issue Date  . . :'
@@ -133,7 +133,7 @@
      A* Confirm Delete Window
      A*----------------------------------------------------------------
      A          R CONFIRMW                  WINDOW(8 15 7 50)
-     A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+     A                                      WDWBORDER((*DSPATR RI) (*COLOR BLU))
      A            CESSION       10A  H
      A                                  1  2'Confirm Delete'
      A                                      DSPATR(HI)
@@ -146,7 +146,7 @@
      A* Detail View Window
      A*----------------------------------------------------------------
      A          R VIEWW                     WINDOW(4 8 18 64)
-     A                                      WDWBORDER((*DSPATR RI) (*CHAR ' '))
+     A                                      WDWBORDER((*DSPATR RI) (*COLOR BLU))
      A            VESSION       10A  H
      A                                  1  2'Instrument Details (View Only)'
      A                                      DSPATR(HI)
@@ -155,7 +155,7 @@
      A                                  5  2'Short Name  . . :'
      A            VFSHRTNAM     35A  O  5 21
      A                                  7  2'Issuer Name . . :'
-     A            VFISSUER      50A  O  7 21
+     A            VFISSUER      42A  O  7 21
      A                                  9  2'Issue Date  . . :'
      A            VFISSUEDT     10A  O  9 21
      A                                 11  2'Country . . . . :'
