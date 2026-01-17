@@ -557,7 +557,7 @@ dcl-proc SendMsg;
   dcl-s msgKey char(4);
   dcl-s errorCode char(256) inz(*allx'00');
 
-  QMHSNDPM(msgId:'FININSTMSGFFININST   ':' ':0:'*INFO':'*':0:msgKey:errorCode);
+  QMHSNDPM(msgId:'FININSTMF IBMIAI1   ':' ':0:'*INFO':'*':0:msgKey:errorCode);
 
 end-proc;
 

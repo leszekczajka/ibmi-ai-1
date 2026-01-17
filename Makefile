@@ -17,7 +17,7 @@ QRPGLESRC = qrpglesrc
 TABLE = FININST
 DSPF = FININSTD
 PGM = FININSTR
-MSGF = FININSTMSGF
+MSGF = FININSTMF
 
 ##############################################################################
 # Default target
