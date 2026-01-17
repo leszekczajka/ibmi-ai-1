@@ -1,19 +1,5 @@
-Creating message file FININSTMSGF...
+Compiling display file FININSTD...
 CPC2196: Library IBMIAI1 added to library list.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
+CPD0043: Keyword SRCSTMF not valid for this command.
 CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-CPD0074: Value 'FININSTMSG' for MSGF exceeds 10 characters.
-CPF0006: Errors occurred in command.
-make: *** [Makefile:50: msgf] Error 255
+make: *** [Makefile:67: dspf] Error 255
