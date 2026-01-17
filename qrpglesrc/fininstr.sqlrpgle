@@ -25,8 +25,7 @@ dcl-ds indicators qualified;
   sflDspCtl   ind pos(32);
   sflClr      ind pos(33);
   sflEnd      ind pos(34);
-  msgClr      ind pos(35);
-  msgDsp      ind pos(36);
+  msgSflEnd   ind pos(35);
   protectIsin ind pos(41);
   errIsin     ind pos(51);
   errShrtNam  ind pos(52);
@@ -105,10 +104,7 @@ dcl-proc Main;
     indicators.sflDspCtl = *on;
 
     write LISTFTR;
-    if indicators.msgDsp;
-      MSGPGMQ = '*';
-      write MSGCTL;
-    endif;
+    write MSGCTL;
     exfmt LISTCTL;
 
     ClearMsg();
@@ -564,7 +560,6 @@ dcl-proc SendMsg;
   dcl-s errorCode char(256) inz(*allx'00');
 
   QMHSNDPM(msgId:'FININSTMF IBMIAI1   ':' ':0:'*INFO':'*':0:msgKey:errorCode);
-  indicators.msgDsp = *on;
 
 end-proc;
 
@@ -584,13 +579,5 @@ dcl-proc ClearMsg;
   dcl-s errorCode char(256) inz(*allx'00');
 
   QMHRMVPM('*':0:'    ':'*ALL':errorCode);
-
-  if indicators.msgDsp;
-    MSGPGMQ = '*';
-    indicators.msgClr = *on;
-    write MSGCTL;
-    indicators.msgClr = *off;
-    indicators.msgDsp = *off;
-  endif;
 
 end-proc;

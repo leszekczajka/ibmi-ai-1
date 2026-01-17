@@ -78,15 +78,16 @@
      A          R MSGSFL                    SFL
      A                                      SFLMSGRCD(24)
      A            MSGKEY                    SFLMSGKEY
-     A            PGMQ                      SFLPGMQ(10)
+     A            PGMQ                      SFLPGMQ
      A          R MSGCTL                    SFLCTL(MSGSFL)
      A                                      SFLSIZ(0002)
      A                                      SFLPAG(0001)
-     A  36                                  SFLDSP
-     A  36                                  SFLDSPCTL
-     A  35                                  SFLCLR
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A  35                                  SFLEND
      A                                      OVERLAY
-     A            MSGPGMQ       10A  H
+     A            PGMQ                      SFLPGMQ
      A*----------------------------------------------------------------
      A* Add/Edit Window Record Format
      A*----------------------------------------------------------------
