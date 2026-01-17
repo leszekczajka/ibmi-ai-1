@@ -568,6 +568,18 @@ end-proc;
 //==================================================================
 dcl-proc ClearMsg;
 
+  dcl-pr QMHRMVPM extpgm('QMHRMVPM');
+    callStack  char(10)   const;
+    stackEntry int(10)    const;
+    msgKey     char(4)    const;
+    msgRmv     char(10)   const;
+    errorCode  char(256);
+  end-pr;
+
+  dcl-s errorCode char(256) inz(*allx'00');
+
+  QMHRMVPM('*':0:'*ALL':'*ALL':errorCode);
+
   indicators.msgClr = *on;
   write MSGCTL;
   indicators.msgClr = *off;
