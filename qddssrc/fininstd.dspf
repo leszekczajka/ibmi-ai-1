@@ -82,8 +82,8 @@
      A          R MSGCTL                    SFLCTL(MSGSFL)
      A                                      SFLSIZ(0002)
      A                                      SFLPAG(0001)
-     A N35                                  SFLDSP
-     A N35                                  SFLDSPCTL
+     A  36                                  SFLDSP
+     A  36                                  SFLDSPCTL
      A  35                                  SFLCLR
      A                                      OVERLAY
      A            MSGPGMQ       10A  H
