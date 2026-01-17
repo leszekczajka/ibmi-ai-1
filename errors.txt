@@ -1,10 +1,4 @@
-> CALL PGM(IBMIAI1/FININSTR)                                          
-  Cannot process subfile request for file FININSTD in library IBMIAI1.
-? C                                                                   
-  Cannot process subfile request for file FININSTD in library IBMIAI1.
-? C                                                                   
-  Session or device error occurred in file FININSTD.                  
-  Application error.  RNX1255 unmonitored by FININSTR at statement    
-    0000000172, instruction X'0000'.                                  
-  Application error.  RNX1255 unmonitored by FININSTR at statement    
-    0000000172, instruction X'0000'.                                  
+> CALL PGM(IBMIAI1/FININSTR)                                        
+  Message key and messages to remove are mutually dependent.        
+  Application error.  CPF24AE unmonitored by FININSTR at statement  
+    0000000848, instruction X'0000'.                                
