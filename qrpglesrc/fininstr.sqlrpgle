@@ -582,7 +582,7 @@ dcl-proc ClearMsg;
 
   dcl-s errorCode char(256) inz(*allx'00');
 
-  QMHRMVPM('*':0:'*ALL':'*ALL':errorCode);
+  QMHRMVPM('*':0:'    ':'*ALL':errorCode);
 
   if indicators.msgDsp;
     indicators.msgClr = *on;
