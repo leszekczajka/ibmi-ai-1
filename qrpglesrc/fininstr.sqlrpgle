@@ -95,6 +95,7 @@ dcl-pr ClearMsg end-pr;
 dcl-proc Main;
 
   open FININSTD;
+  PGMQ = '*';
   gTopIsin = *blanks;
 
   LoadSubfile();
