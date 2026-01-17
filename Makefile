@@ -66,7 +66,10 @@ msgf: lib
 dspf: lib
 	@echo "Compiling display file $(DSPF)..."
 	liblist -a $(LIB)
-	system "CRTDSPF FILE($(LIB)/$(DSPF)) SRCSTMF('$(CURDIR)/$(QDDSSRC)/fininstd.dspf') OPTION(*EVENTF)"
+	-system "CRTSRCPF FILE($(LIB)/QDDSSRC) RCDLEN(112) TEXT('DDS Source')" 2>/dev/null || true
+	system "CPYFRMSTMF FROMSTMF('$(CURDIR)/$(QDDSSRC)/fininstd.dspf') TOMBR('/QSYS.LIB/$(LIB).LIB/QDDSSRC.FILE/$(DSPF).MBR') MBROPT(*REPLACE)"
+	system "CHGPFM FILE($(LIB)/QDDSSRC) MBR($(DSPF)) SRCTYPE(DSPF)"
+	system "CRTDSPF FILE($(LIB)/$(DSPF)) SRCFILE($(LIB)/QDDSSRC) SRCMBR($(DSPF)) OPTION(*EVENTF)"
 
 ##############################################################################
 # Compile RPG program
